@@ -148,6 +148,7 @@ textarea:not([rows]) {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto;
         gap: 1rem;
+        margin: auto;
     }
 
     .cards {
