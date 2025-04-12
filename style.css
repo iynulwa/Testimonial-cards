@@ -31,7 +31,6 @@ html {
     -moz-text-size-adjust: none;
     -webkit-text-size-adjust: none;
     text-size-adjust: none;
-    font-size: clamp(0.8rem, 0.5rem + 1vw, 1rem);
 }
 
 body, h1, h2, h3, h4, p,
@@ -52,6 +51,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 1.5rem;
+    background-color: var(--clr--white);
     color: var(--clr--white);
     font-size: var(--fs--regular);
     font-weight: var(--fw--regular);
@@ -140,14 +140,39 @@ textarea:not([rows]) {
     color: var(--clr--grey500);
 }
 
-@media screen and (min-width: 40rem) {
+@media (min-width: 35rem)  and (max-width: 61rem) {
+    
+    .grid-container {
+        width: 90%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 1rem;
+    }
+
+    .cards {
+        margin: 0;
+    }
+
+    .jonathan-card {
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+
+    .jeanette-card {
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+}
+
+@media screen and (min-width: 62rem) {
 
     .grid-container {
-        max-width: 80%;
+        width: 75%;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(2, 1fr);
-        gap: 1.5rem;
+        gap: 1rem;
         margin: auto;
     }
 
@@ -157,6 +182,9 @@ textarea:not([rows]) {
     }
 
     .daniel-card {
+        background-image: url(./images/bg-pattern-quotation.svg);
+        background-repeat: no-repeat;
+        background-position: right 3rem top;
         grid-column: span 2;
         grid-row: 1/2;
     }
